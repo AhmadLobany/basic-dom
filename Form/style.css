@@ -1,0 +1,30 @@
+#container {
+    position: absolute;
+    width: 400px;
+    height: 360px;
+    background-color: lightblue;
+}
+.header {
+    position: absolute;
+    font-size: large;
+    font-family: "Lucida Console", Courier, monospace;
+    left: 20px;
+
+}
+
+#bday {
+    position: absolute;
+    left: 220px;
+}
+
+#but {
+    position: absolute;
+    left: 300px;
+}
+
+.bday { 
+    position: absolute;
+    left: 220px;
+    font-family: "Lucida Console", Courier, monospace;
+    font-size: large;
+}

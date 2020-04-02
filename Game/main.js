@@ -18,16 +18,20 @@ const upArrow = document.getElementById("up")
 upArrow.onclick = function () {
     const ball = document.getElementById('block')
     let bottom = parseInt(ball.style.bottom) || 400
+    if((bottom+15)<420) {
     bottom += 15
     ball.style.bottom = bottom + "px"
+    }
 }
 
 const downArrow = document.getElementById("down")
 downArrow.onclick = function () {
     const ball = document.getElementById('block')
     let bottom = parseInt(ball.style.bottom) || 400
+    if((bottom-15)>60) {
     bottom -= 15
     ball.style.bottom = bottom + "px"
+    }
 }
 
 
@@ -35,8 +39,11 @@ const leftArrow = document.getElementById("left")
 leftArrow.onclick = function () {
     const ball = document.getElementById('block')
     let right = parseInt(ball.style.right) || 400
+    if((right+15)<420) {
     right += 15
     ball.style.right = right + "px"
+    }
+    
 }
 
 
@@ -44,8 +51,10 @@ const rightArrow = document.getElementById("right")
 rightArrow.onclick = function () {
     const ball = document.getElementById('block')
     let right = parseInt(ball.style.right) || 400
+    if((right-15)>-10) {
     right -= 15
     ball.style.right = right + "px"
+    }
 }
 
 

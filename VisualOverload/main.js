@@ -5,22 +5,46 @@ const getRandomColor = function() {
     return niceColors[randomPosition];
   }
 
+  const colors = []
+
+
+const checkSame = function() {
+    let color = colors[0]
+    for(let i in colors) {
+        if (colors[i]!=color) return
+    }
+    const win = document.createElement('h1')
+    win.innerHTML='Nice Job!'
+    win.style.fontSize = 'x-large'
+    win.style.position = 'absolute'
+    win.style.bottom = 0
+    win.style.left = '250px'
+    win.style.color = 'Red'
+    document.getElementById('container').appendChild(win)
+}
 
 let left = 0 
 for(let i=0;i<6;i++) {
     const box = document.createElement('div')
     box.setAttribute('id','box' + i)
     box.setAttribute('class','box')
-    box.setAttribute('onmouseenter',"changeColor(this)")
+    box.setAttribute('onmouseenter',"changeColor(this,"+i+ ")")
     box.style.left += (left + 'px')
     left+=105 
-    box.style.backgroundColor = getRandomColor();
+    let color = getRandomColor() 
+    colors[i] = color
+    box.style.backgroundColor = color
     document.getElementById('container').appendChild(box)
 }
 
 
-const changeColor = function (box) {
-    box.style.backgroundColor= getRandomColor()
+const changeColor = function (box,i) {
+    let color = getRandomColor()
+    colors[i] = color
+    box.style.backgroundColor = color
+    checkSame()
 }
+
+
 
 
